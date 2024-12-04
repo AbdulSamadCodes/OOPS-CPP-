@@ -23,16 +23,20 @@ public:
   }
 
   // Custom Copy Cosntructor
-  Person(Person &other) {
+  Person(const Person &other) {
     this->name = "Huzaifa";
-    this->age = other.age;
+    this->age = other.age;  
 
     //Making a shallow copy
     // this->marks = other.marks; 
 
     //Making a deep copy
-    this->marks = new int();
-    *(this->marks) = *(other.marks);
+    if(other.marks) {
+      this->marks = new int();
+      *(this->marks) = *(other.marks);
+    } else {
+      this->marks = nullptr;  
+    }
   }
 
   void display() {
@@ -59,7 +63,7 @@ int main() {
   //marks of object p2 will get overriden, but if we use deep copy then it will not happen
   p2.display();
 
-  
+
 
   return 0;
 }
