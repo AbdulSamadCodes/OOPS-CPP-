@@ -2,7 +2,7 @@
 using namespace std;
 
 /* Compile time polymorphism is the type of polymorphism
-  in the function or method that gets called is determined at runtime*/
+  in the function or method that gets called is determined at compiletime*/
 
 class Student {
 public:
